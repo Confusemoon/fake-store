@@ -83,3 +83,32 @@ function Product() {
       }
     };
 
+    fetchProduct();
+  }, [productId]);
+
+  const handleThumbnailClick = (url) => {
+    setMainImage(url);
+  };
+
+  const togglePurchases = () => {
+    setShowAllPurchases((prev) => !prev);
+  };
+
+  const renderRatingBars = () => {
+    return Object.entries(ratingDistribution)
+      .sort((a, b) => b[0] - a[0])
+      .map(([star, count]) => {
+        const percent = Math.round((count / totalRatings) * 100);
+        return (
+          <div className="rating-row" key={star}>
+            <span className="star-label">{star} ★</span>
+            <div className="bar-container">
+              <div className="bar-fill" style={{ width: `${percent}%` }}></div>
+            </div>
+            <span className="count-label">{count}</span>
+          </div>
+        );
+      });
+  };
+
+  
