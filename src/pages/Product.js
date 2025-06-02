@@ -9,7 +9,7 @@ function Product() {
   const [related, setRelated] = useState([]);
   const [mainImage, setMainImage] = useState("");
   const [showAllPurchases, setShowAllPurchases] = useState(false);
-  const [activeTab, setActiveTab] = useState("details"); // "details" 或 "reviews"
+  const [activeTab, setActiveTab] = useState("details");
 
   const API_URL = "https://fakestoreapi.com/products";
 
@@ -35,5 +35,51 @@ function Product() {
     1: 1,
   };
 
+  const totalRatings = Object.values(ratingDistribution).reduce((a, b) => a + b, 0);
 
+  const handleSearch = (e) => {
+    e.preventDefault();
+    const id = e.target.productId.value.trim();
+    if (id === "") return;
+    setMessage("");
+    setProduct(null);
+    setRelated([]);
+    setActiveTab("details");
+    setProductId(id);
+    e.target.productId.value = "";
+  };
+
+  useEffect(() => {
+    if (productId.length === 0) return;
+
+    const fetchProduct = async () => {
+      try {
+        const response = await axios.get(`${API_URL}/${productId}`);
+        const data = response.data;
+        setProduct({
+          id: data.id,
+          title: data.title,
+          image: data.image,
+          price: data.price,
+          description: data.description,
+          category: data.category,
+          rating: data.rating,
+        });
+        setMainImage(data.image);
+        setMessage("");
+
+        const relatedRes = await axios.get(
+          `${API_URL}/category/${encodeURIComponent(data.category)}`
+        );
+        const relatedList = relatedRes.data
+          .filter((item) => item.id !== data.id)
+          .slice(0, 4);
+        setRelated(relatedList);
+      } catch (error) {
+        console.error(error.message);
+        setProduct(null);
+        setRelated([]);
+        setMessage("Product not found. Please enter an ID from 1 to 20.");
+      }
+    };
 
