@@ -2,7 +2,7 @@ import Header from "./components/Header";
 import Home from "./pages/Home";
 import Product from "./pages/Product";
 import Cart from "./pages/Cart";
-import notFound from "./pages/notFound";
+import NotFound from "./pages/NotFound";
 import { Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
             <Route exact path='/' element={<Home />} />
             <Route exact path='/Product' element={<Product />} />
             <Route exact path='/Cart' element={<Cart />} />
-            <Route exact path='/notFound' element={<notFound />} />
+            <Route exact path='/NotFound' element={<NotFound />} />
           </Routes>
         </div>
       </main>
