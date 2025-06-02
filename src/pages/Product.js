@@ -274,4 +274,56 @@ function Product() {
               )}
             </div>
 
- 
+            <div className="right-card">
+              <div className="buy-card">
+                <h1 className="prod-title">{product.title}</h1>
+                <p className="prod-price">$ {product.price}</p>
+
+                <div className="option-section">
+                  <label className="option-label">Color:</label>
+                  <select className="option-select">
+                    <option value="silver">Silver</option>
+                    <option value="black">Black</option>
+                    <option value="gold">Gold</option>
+                  </select>
+                </div>
+
+                <div className="option-section">
+                  <label className="option-label">Gift Box:</label>
+                  <div className="gift-options">
+                    <button className="gift-btn">None</button>
+                    <button className="gift-btn">Basic Box</button>
+                    <button className="gift-btn">Premium Box</button>
+                    <button className="gift-btn">Luxury Box</button>
+                  </div>
+                </div>
+
+                <button className="buy-btn">Add to Cart</button>
+
+                <div className="service-section">
+                  <div className="section-header">Service Guarantees</div>
+                  <ul className="service-list">
+                    <li>7-Day Returns</li>
+                    <li>Fast Shipping</li>
+                    <li>Secure Payment</li>
+                    <li>Authenticity Guaranteed</li>
+                  </ul>
+                </div>
+
+                <div className="brand-section">
+                  <p className="brand-name">Brand: CASIO</p>
+                  <p className="brand-followers">1.2M Followers | 12.7K Products</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {message && <p className="not-found">{message}</p>}
+      </section>
+    </div>
+  );
+}
+
+export default Product;
+
