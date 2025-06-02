@@ -1,9 +1,12 @@
 import React from "react";
+import { useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay, Navigation } from "swiper/modules";
-import "swiper/css";               
-import "swiper/css/pagination";    
-import "swiper/css/navigation";    
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";  
+import CustomImageOne from "../img/banner1.jpg";
+import CustomImageTwo from "../img/banner2.jpg";
 
 const HeroBanner = () => {
   const navigate = useNavigate(); 
@@ -26,15 +29,20 @@ const HeroBanner = () => {
               className="btn cart-btn"
               onClick={() => navigate('/404')}
             >
-              Prime
+              Log-In
             </button>
           </div>
-        </div>
 
-                        
+          {images.map((src, idx) => ( 
+          <SwiperSlide>
+            
+          </SwiperSlide>))}
+
         </div>
-      </div>
+        </div>
+    </section>
   );
 };
+        
 
 export default HeroBanner;
