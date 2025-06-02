@@ -16,7 +16,22 @@ function Home() {
 
   return (
     <>
-      
+      <HeroBanner />
+      <section>
+        <div>
+          <button onClick={() => setSort('title')}>Sort by Name</button>
+          <button onClick={() => setSort('price')}>Sort by Price</button>
+        </div>
+        <div className="products-grid">
+          {products.map(product => (
+            <div key={product.id} className="product-item">
+              <img src={product.image} alt={product.title} />
+              <h3>{product.title}</h3>
+              <p>${product.price}</p>
+            </div>
+          ))}
+        </div>
+      </section>
     </>
   );
 }
