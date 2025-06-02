@@ -106,8 +106,49 @@ p {
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /*  Cart                                                 */
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+.cart-page {
+  background-color: rgb(38, 37, 44);
+  padding: 60px 0;
+}
 
+.page-title {
+  font-size: 2.4rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  text-align: center;
+  margin-bottom: 24px;
+  color: #fff;
+}
 
+.list {
+  list-style: none;
+  width: min(100% - 30px, 1080px);
+  margin-inline: auto;
+  padding: 0;
+}
+
+.list li {
+  background-color: rgb(38, 37, 44);
+  border: 1px solid rgb(58, 58, 90);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #fff;
+  transition: background-color 0.2s;
+}
+
+.list li:hover {
+  background-color: rgb(58, 58, 90);
+}
+
+@media (max-width: 1024px) {
+  .list li {
+    font-size: 1.6rem;
+    padding: 14px 16px;
+  }
+}
 
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /*  Product                                              */
