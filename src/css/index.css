@@ -369,3 +369,46 @@ p {
   font-weight: 500;
   color: #a0a3b1;
 }
+
+.param-value {
+  flex: 1;
+  color: #c0c4dc;
+  line-height: 1.5;
+}
+
+.param-value.desc {
+  color: #b0b3c1;
+}
+
+.related-products .section-header {
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.related-list {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.related-list::-webkit-scrollbar {
+  height: 6px;
+}
+
+.related-list::-webkit-scrollbar-thumb {
+  background-color: #4a4a70;
+  border-radius: 3px;
+}
+
+.related-item {
+  flex: 0 0 100px;
+  text-align: center;
+  cursor: pointer;
+  background-color: rgb(58, 58, 90);
+  border-radius: 6px;
+  padding: 8px;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
