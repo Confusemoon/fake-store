@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import HeroBanner from '../components/Herobanner';
 import axios from 'axios';
 
 function Home() {
