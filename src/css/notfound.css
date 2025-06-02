@@ -1,0 +1,13 @@
+.notfound-page {
+    background-color: #000000;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: bold;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0; 
+  }
+  

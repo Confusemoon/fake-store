@@ -23,11 +23,6 @@ function Header() {
                                     Cart
                                 </NavLink>
                             </li>
-                            <li>
-                                <NavLink className={({isActive}) => (isActive ? 'active' : '')} to='/notFound'>
-                                    notFound
-                                </NavLink>
-                            </li>
                         </ul>
                     </nav>
                 </div>
