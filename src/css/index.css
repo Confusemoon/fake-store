@@ -112,4 +112,39 @@ p {
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 /*  Product                                              */
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+.product-container-wrapper {
+  width: min(100% - 30px, 1080px);
+  margin-inline: auto;
+  padding: 20px 15px;
+}
 
+.product-page {
+  background-color: rgb(38, 37, 44);
+  color: #fff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding-bottom: 40px;
+}
+
+.page-title {
+  text-align: center;
+  margin: 16px 0;
+  font-size: 28px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+.search-form input[type="text"] {
+  width: 260px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px 0 0 6px;
+  background-color: rgba(58, 58, 90, 0.8);
+  color: #fff;
+  font-size: 14px;
+}
