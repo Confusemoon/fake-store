@@ -3,7 +3,8 @@ import HeroBanner from "./components/Herobanner";
 import Home from "./pages/Home";
 import Product from "./pages/Product";
 import Cart from "./pages/Cart";
-import NotFound from "./pages/notFound";
+import NotFound from "./pages/NotFound";
+import Footer from "./components/Footer";
 import { Routes, Route } from "react-router-dom";
 
 function App() {

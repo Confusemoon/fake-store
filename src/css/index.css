@@ -92,12 +92,16 @@ p {
 /*  hero-banner                                          */
 /* - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 .hero-banner {
-  width: 100%;
-  background-color: #000;
+  background: #000;
   color: #fff;
-  padding-top: 90px;
-  padding-bottom: 90px;
+  padding: 60px 20px;
+  text-align: center;
 }
+.hero-banner h1, .hero-banner p {
+  margin: 0 auto 1em auto;
+  max-width: 800px;  
+}
+
 .hero-container {
   display: flex;
   justify-content: space-between;
@@ -105,12 +109,14 @@ p {
   max-width: 1200px;
   margin: 0 auto;
 }
+
 .hero-content {
   max-width: 35%;
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
+
 .hero-content h1 {
   font-size: 4.5rem;
   font-weight: 700;
