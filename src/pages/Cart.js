@@ -11,13 +11,6 @@ function Cart() {
       quantity: 1
     },
     {
-      id: 2,
-      title: "Mens Casual Premium Slim Fit T-Shirts",
-      price: 22.3,
-      image: "https://fakestoreapi.com/img/71-3HjGNDUL._AC_UL180_SR180,180_.jpg",
-      quantity: 2
-    },
-    {
       id: 3,
       title: "Mens Cotton Jacket",
       price: 55.99,
