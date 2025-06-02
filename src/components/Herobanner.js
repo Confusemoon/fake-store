@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
-import "swiper/css/navigation";  
+import "swiper/css/navigation";
 import CustomImageOne from "../img/banner1.jpg";
 import CustomImageTwo from "../img/banner2.jpg";
 
@@ -32,17 +32,33 @@ const HeroBanner = () => {
               Log-In
             </button>
           </div>
-
-          {images.map((src, idx) => ( 
-          <SwiperSlide>
-            
-          </SwiperSlide>))}
-
         </div>
+
+        <div className="hero-slider">
+          <Swiper
+            modules={[Autoplay, Pagination, Navigation]}
+            spaceBetween={20}
+            slidesPerView={1}
+            loop={true}
+            autoplay={{ delay: 3000, disableOnInteraction: false }}
+            pagination={{ clickable: true }}
+            navigation={true}
+            className="swiper-container"
+          >
+            {images.map((src, idx) => (
+              <SwiperSlide key={idx}>
+                <img
+                  src={src}
+                  alt={`Slide ${idx + 1}`}
+                  className="slider-image"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
+      </div>
     </section>
   );
 };
-        
 
 export default HeroBanner;
