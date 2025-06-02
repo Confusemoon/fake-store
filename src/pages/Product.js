@@ -111,4 +111,48 @@ function Product() {
       });
   };
 
-  
+  return (
+    <div className="product-container-wrapper">
+      <section className="product-page">
+        <h2 className="page-title">Product Details</h2>
+
+        <form className="search-form" onSubmit={handleSearch}>
+          <input
+            type="text"
+            name="productId"
+            placeholder="Enter Product ID (1–20)"
+          />
+          <button type="submit">Search</button>
+        </form>
+
+        {product && (
+          <div className="product-main-content">
+            <div className="left-card">
+              <div className="image-carousel">
+                <button className="carousel-arrow left">&#8249;</button>
+                <div className="main-image">
+                  <img src={mainImage} alt={product.title} />
+                </div>
+                <button className="carousel-arrow right">&#8250;</button>
+              </div>
+
+              <div className="thumbnails">
+                <img
+                  src={product.image}
+                  alt="Thumbnail"
+                  onClick={() => handleThumbnailClick(product.image)}
+                  className={mainImage === product.image ? "active-thumb" : ""}
+                />
+                {related.map((item) => (
+                  <img
+                    key={item.id}
+                    src={item.image}
+                    alt="Thumb"
+                    onClick={() => handleThumbnailClick(item.image)}
+                    className={mainImage === item.image ? "active-thumb" : ""}
+                  />
+                ))}
+              </div>
+
+
+
