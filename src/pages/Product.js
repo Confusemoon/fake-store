@@ -154,5 +154,54 @@ function Product() {
                 ))}
               </div>
 
+              <div className="tabs">
+                <button
+                  className={`tab-button ${
+                    activeTab === "details" ? "active-tab" : ""
+                  }`}
+                  onClick={() => setActiveTab("details")}
+                >
+                  Details
+                </button>
+                <button
+                  className={`tab-button ${
+                    activeTab === "reviews" ? "active-tab" : ""
+                  }`}
+                  onClick={() => setActiveTab("reviews")}
+                >
+                  Reviews
+                </button>
+              </div>
+
+              {activeTab === "details" && (
+                <div className="tab-content details-content">
+                  <div className="recent-purchases">
+                    <div className="section-header">Recent Purchases</div>
+                    <ul
+                      className={`purchase-list ${
+                        showAllPurchases ? "expanded" : ""
+                      }`}
+                    >
+                      {recentPurchases.map((p, index) => {
+                        if (!showAllPurchases && index >= 3) return null;
+                        return (
+                          <li key={index}>
+                            <span className="purchase-name">{p.name}</span> bought{" "}
+                            just now –{" "}
+                            <span className="purchase-time">{p.time}</span>
+                          </li>
+                        );
+                      })}
+                      {!showAllPurchases && (
+                        <li
+                          className="view-more"
+                          onClick={togglePurchases}
+                        >
+                          View More
+                        </li>
+                      )}
+                    </ul>
+                  </div>
+
 
 
