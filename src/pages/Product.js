@@ -248,3 +248,30 @@ function Product() {
                 </div>
               )}
 
+              {activeTab === "reviews" && (
+                <div className="tab-content reviews-content">
+                  <div className="rating-distribution">
+                    <div className="section-header">Rating Distribution</div>
+                    {renderRatingBars()}
+                  </div>
+
+                  <div className="reviews-list">
+                    <div className="section-header">User Reviews</div>
+                    {sampleReviews.map((r, idx) => (
+                      <div className="single-review" key={idx}>
+                        <div className="review-header">
+                          <span className="review-user">{r.user}</span>
+                          <span className="review-stars">
+                            {"★".repeat(r.rating)}
+                            {"☆".repeat(5 - r.rating)}
+                          </span>
+                        </div>
+                        <p className="review-text">{r.text}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+ 
