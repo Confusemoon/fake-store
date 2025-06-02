@@ -1,7 +1,14 @@
-import React from "react";
-import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
-const HeroBanner = () => {
+function HeroBanner() {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    axios.get('https://fakestoreapi.com/products?limit=5').then(res => {
+      setProducts(res.data);
+    });
+  }, []);
 
   return (
     <section className="hero-banner flex">
@@ -20,6 +27,6 @@ const HeroBanner = () => {
       </div>
     </section>
   );
-};
+}
 
 export default HeroBanner;
