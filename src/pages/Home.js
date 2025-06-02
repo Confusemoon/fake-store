@@ -1,36 +1,24 @@
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+
 function Home() {
-    return (
-        <section>
-            <h2>Intro to React Router</h2>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium 
-                reprehenderit modi ad, nihil architecto sunt vitae, aliquid esse 
-                laboriosam voluptatum ut delectus culpa libero quisquam illum eveniet 
-                explicabo nisi tempora? Lorem ipsum dolor sit amet consectetur adipisicing 
-                elit. Laudantium reprehenderit modi ad nihil architecto sunt vitae, aliquid 
-                esse laboriosam voluptatum ut delectus culpa libero quisquam illum eveniet 
-                explicabo nisi tempora.
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium 
-                reprehenderit modi ad, nihil architecto sunt vitae, aliquid esse 
-                laboriosam voluptatum ut delectus culpa libero quisquam illum eveniet 
-                explicabo nisi tempora? Lorem ipsum dolor sit amet consectetur adipisicing 
-                elit. Laudantium reprehenderit modi ad nihil architecto sunt vitae, aliquid 
-                esse laboriosam voluptatum ut delectus culpa libero quisquam illum eveniet 
-                explicabo nisi tempora.
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium 
-                reprehenderit modi ad, nihil architecto sunt vitae, aliquid esse 
-                laboriosam voluptatum ut delectus culpa libero quisquam illum eveniet 
-                explicabo nisi tempora? Lorem ipsum dolor sit amet consectetur adipisicing 
-                elit. Laudantium reprehenderit modi ad nihil architecto sunt vitae, aliquid 
-                esse laboriosam voluptatum ut delectus culpa libero quisquam illum eveniet 
-                explicabo nisi tempora.
-            </p>
-        </section>
-    );
+  const [products, setProducts] = useState([]);
+  const [sort, setSort] = useState('title');
+
+  useEffect(() => {
+    axios.get('https://fakestoreapi.com/products').then(res => {
+      const sortedProducts = res.data.sort((a, b) =>
+        sort === 'price' ? a.price - b.price : a.title.localeCompare(b.title)
+      );
+      setProducts(sortedProducts);
+    });
+  }, [sort]);
+
+  return (
+    <>
+      
+    </>
+  );
 }
 
 export default Home;
