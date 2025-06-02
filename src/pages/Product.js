@@ -203,5 +203,48 @@ function Product() {
                     </ul>
                   </div>
 
+                  <div className="product-parameters">
+                    <div className="section-header">Product Specifications</div>
+                    <ul className="param-list">
+                      <li>
+                        <span className="param-key">Product ID:</span>
+                        <span className="param-value">{product.id}</span>
+                      </li>
+                      <li>
+                        <span className="param-key">Category:</span>
+                        <span className="param-value">{product.category}</span>
+                      </li>
+                      <li>
+                        <span className="param-key">Price:</span>
+                        <span className="param-value">$ {product.price}</span>
+                      </li>
+                      <li>
+                        <span className="param-key">Rating:</span>
+                        <span className="param-value">
+                          {product.rating.rate} ({product.rating.count} Reviews)
+                        </span>
+                      </li>
+                      <li>
+                        <span className="param-key">Description:</span>
+                        <span className="param-value desc">
+                          {product.description}
+                        </span>
+                      </li>
+                    </ul>
+                  </div>
 
+                  <div className="related-products">
+                    <div className="section-header">You May Also Like</div>
+                    <div className="related-list">
+                      {related.map((item) => (
+                        <div className="related-item" key={item.id}>
+                          <img src={item.image} alt={item.title} />
+                          <p className="related-title">{item.title}</p>
+                          <p className="related-price">$ {item.price}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
 
